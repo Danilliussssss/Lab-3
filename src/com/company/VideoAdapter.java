@@ -2,8 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class VideoAdapter {
-    String name;
+ class VideoAdapter{    String name;
     int TF;
 
     VideoAdapter()
