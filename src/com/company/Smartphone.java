@@ -7,6 +7,7 @@ import java.util.Scanner;
      protected String name;
      protected Processor P;
     static int counter=0;
+    static int Cost;
     Smartphone()
     {
 
@@ -22,6 +23,13 @@ import java.util.Scanner;
         this.name=name;
         counter++;
     }
+     static void EnterCost()
+     {
+         System.out.println("Введите цену смартфона:");
+         Scanner in=new Scanner(System.in);
+         Cost=in.nextInt();
+
+     }
     void EnterSmartphone()
     {
         Scanner in=new Scanner(System.in);
@@ -38,6 +46,8 @@ import java.util.Scanner;
         System.out.println(name);
         System.out.print("Объём батареи:");
         System.out.println(mAh);
+        System.out.print("Цена:");
+        System.out.println(Cost);
         System.out.print("Количество:");
         System.out.println(counter);
     }

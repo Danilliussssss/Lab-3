@@ -16,32 +16,34 @@ public class Main {
             Scanner in = new Scanner(System.in);
             choose = in.nextInt();
             if (choose == 1) {
-                 Smartphone SMARTPHONE = new Smartphone();
+                Smartphone SMARTPHONE = new Smartphone();
                 SMARTPHONE.EnterSmartphone();
                 SMARTPHONE.P.EnterProcessor();
+                Smartphone.EnterCost();
                 System.out.print("Введите кол-во гаджетов");
                 massive = in.nextInt();
 
 
                 Smartphone S[] = new Smartphone[massive];
-                for(int i=0;i<massive;i++ ) {
+                for (int i = 0; i < massive; i++) {
                     S[i] = new Smartphone(SMARTPHONE.name, SMARTPHONE.mAh);
-                    S[i].P =new Processor(SMARTPHONE.P.GHz, SMARTPHONE.P.name);
+                    S[i].P = new Processor(SMARTPHONE.P.GHz, SMARTPHONE.P.name);
                 }
-                S[massive-1].PrintSmartphone();
-                S[massive-1].P.PrintProcessor();
+                S[massive - 1].PrintSmartphone();
+                S[massive - 1].P.PrintProcessor();
                 System.out.println("Хотите редактировать данные смартфона?\n1.Да\n2.Нет");
                 do {
                     f = in.nextInt();
-                }while (f!=1&&f!=2);
-                if(f==1)
-                    Smartphone.counter=0;
+                } while (f != 1 && f != 2);
+                if (f == 1){
+                    Smartphone.counter = 0;
                 SMARTPHONE.EnterSmartphone();
                 SMARTPHONE.P.EnterProcessor();
-                  for(int i=0;i<massive;i++) {
+                for (int i = 0; i < massive; i++) {
                     S[i] = new Smartphone(SMARTPHONE.name, SMARTPHONE.mAh);
-                    S[i].P =new Processor(SMARTPHONE.P.GHz, SMARTPHONE.P.name);
+                    S[i].P = new Processor(SMARTPHONE.P.GHz, SMARTPHONE.P.name);
                 }
+            }
                 S[massive-1].PrintSmartphone();
                 S[massive-1].P.PrintProcessor();
 
@@ -49,6 +51,7 @@ public class Main {
 
                 Headphone HEADPHONE = new Headphone();
                 HEADPHONE.EnterHeadphone();
+                Headphone.EnterCost();
                 System.out.print("Введите кол-во гаджетов");
                 massive = in.nextInt();
                 Headphone[] H = new Headphone[massive];
@@ -72,10 +75,9 @@ else if(choose==3)
                 Notebook NOTEBOOK= new Notebook();
                 NOTEBOOK.EnterNotebook();
                 NOTEBOOK.Video.EnterVideoAdapter();
+                Notebook.EnterCost();
                 System.out.print("Введите кол-во гаджетов");
                 massive = in.nextInt();
-
-
                 Notebook N[] = new Notebook[massive];
                 for(int i=0;i<massive;i++ ) {
                     N[i] = new Notebook( NOTEBOOK.mAh,NOTEBOOK.name);

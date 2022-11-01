@@ -6,6 +6,7 @@ class Headphone {
     protected int mAh;
     protected String name;
     static int counter=0;
+    static int Cost;
     Headphone()
     {
         this.mAh=0;
@@ -17,9 +18,19 @@ class Headphone {
 
         this.mAh=mAh;
         this.name=name;
-        counter++;
-    }
 
+    }
+ static void Counter()
+ {
+     counter++;
+ }
+    static void EnterCost()
+    {
+        System.out.println("Введите цену наушников:");
+        Scanner in=new Scanner(System.in);
+        Cost=in.nextInt();
+
+    }
     void EnterHeadphone()
     {
         Scanner in=new Scanner(System.in);
@@ -30,12 +41,14 @@ class Headphone {
         mAh = in.nextInt();
     }
 
-    public   void  PrintHeadphone()
+     void  PrintHeadphone()
     {
         System.out.print("Имя:");
         System.out.println(name);
         System.out.print("Объём батареи:");
         System.out.println(mAh);
+        System.out.print("Цена:");
+        System.out.println(Cost);
         System.out.print("Количество:");
         System.out.println(counter);
     }

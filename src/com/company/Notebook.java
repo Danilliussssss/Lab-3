@@ -7,6 +7,7 @@ import java.util.Scanner;
     protected String name;
     protected VideoAdapter Video;
     static int counter=0;
+    static int Cost;
     Notebook()
     {
         this.mAh=0;
@@ -20,7 +21,13 @@ Video = new VideoAdapter();
         this.name=name;
         counter++;
     }
+     static void EnterCost()
+     {
+         System.out.println("Введите цену ноутбука:");
+         Scanner in=new Scanner(System.in);
+         Cost=in.nextInt();
 
+     }
     void EnterNotebook()
     {
         Scanner in=new Scanner(System.in);
@@ -37,6 +44,8 @@ Video = new VideoAdapter();
         System.out.println(name);
         System.out.print("Объём батареи:");
         System.out.println(mAh);
+        System.out.print("Цена:");
+        System.out.println(Cost);
         System.out.print("Количество:");
         System.out.println(counter);
     }
