@@ -3,9 +3,9 @@ package com.company;
 import java.util.Scanner;
 
  class Smartphone {
-    int mAh;
-    String name;
-    Processor P;
+     protected int mAh;
+     protected String name;
+     protected Processor P;
     static int counter=0;
     Smartphone()
     {

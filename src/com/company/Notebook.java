@@ -2,10 +2,10 @@ package com.company;
 
 import java.util.Scanner;
 
-class Notebook {
-    int mAh;
-    String name;
-    VideoAdapter Video;
+ class Notebook {
+    protected    int mAh;
+    protected String name;
+    protected VideoAdapter Video;
     static int counter=0;
     Notebook()
     {

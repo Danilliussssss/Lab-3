@@ -3,9 +3,9 @@ package com.company;
 import java.util.Scanner;
 
  class Processor {
-    float GHz;
-    String name;
-    Processor()
+     protected float GHz;
+     protected String name;
+     Processor()
     {
        this. GHz=0;
        this. name="";

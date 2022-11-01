@@ -3,8 +3,8 @@ package com.company;
 import java.util.Scanner;
 
 class Headphone {
-    int mAh;
-    String name;
+    protected int mAh;
+    protected String name;
     static int counter=0;
     Headphone()
     {
