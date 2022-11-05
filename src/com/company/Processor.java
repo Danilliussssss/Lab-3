@@ -3,18 +3,18 @@ package com.company;
 import java.util.Scanner;
 
  class Processor {
-     protected float GHz;
-     protected String name;
+     private float GHz;
+     private String name;
      Processor()
     {
        this. GHz=0;
        this. name="";
     }
 
-    Processor(float GHz,String name)
+    Processor(Processor Pr)
     {
-        this.GHz=GHz;
-        this.name=name;
+        this.GHz=Pr.GHz;
+        this.name=Pr.name;
     }
     void EnterProcessor()
     {

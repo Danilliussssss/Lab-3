@@ -3,8 +3,8 @@ package com.company;
 import java.util.Scanner;
 
  class Smartphone {
-     protected int mAh;
-     protected String name;
+     private int mAh;
+     private String name;
      protected Processor P;
     static int counter=0;
     static int Cost;
@@ -16,11 +16,11 @@ import java.util.Scanner;
          P = new Processor();
 
     }
-    Smartphone(String name,int mAh)
+    Smartphone(Smartphone S)
     {
         P = new Processor();
-        this.mAh=mAh;
-        this.name=name;
+        this.mAh=S.mAh;
+        this.name=S.name;
         counter++;
     }
      static void EnterCost()

@@ -1,23 +1,22 @@
 package com.company;
-
+import java.util.Map;
 import java.util.Scanner;
-
 class Headphone {
-    protected int mAh;
-    protected String name;
-    static int counter=0;
-    static int Cost;
+    private int mAh;
+    private String name;
+    private static int counter=0;
+    private static int Cost;
     Headphone()
     {
         this.mAh=0;
         this.name="";
 
     }
-    Headphone(int mAh,String name)
+    Headphone(Headphone H)
     {
 
-        this.mAh=mAh;
-        this.name=name;
+        this.mAh=H.mAh;
+        this.name=H.name;
 
     }
  static void Counter()
@@ -32,13 +31,15 @@ class Headphone {
 
     }
     void EnterHeadphone()
-    {
+    {   counter=0;
         Scanner in=new Scanner(System.in);
         System.out.println("Введите данные наушников:");
         System.out.print("Введите название:");
         name = in.nextLine();
         System.out.print("Введите объём батареи:");
         mAh = in.nextInt();
+
+
     }
 
      void  PrintHeadphone()

@@ -3,22 +3,22 @@ package com.company;
 import java.util.Scanner;
 
  class Notebook {
-    protected    int mAh;
-    protected String name;
-    protected VideoAdapter Video;
-    static int counter=0;
-    static int Cost;
+    private    int mAh;
+    private String name;
+     VideoAdapter Video;
+    private static int counter=0;
+     private static int Cost;
     Notebook()
     {
         this.mAh=0;
         this.name="";
 Video = new VideoAdapter();
     }
-    Notebook(int mAh,String name)
+    Notebook(Notebook N)
     {
         Video = new VideoAdapter();
-        this.mAh=mAh;
-        this.name=name;
+        this.mAh=N.mAh;
+        this.name=N.name;
         counter++;
     }
      static void EnterCost()
@@ -30,6 +30,7 @@ Video = new VideoAdapter();
      }
     void EnterNotebook()
     {
+        counter=0;
         Scanner in=new Scanner(System.in);
         System.out.println("Введите данные ноутбука:");
         System.out.print("Введите название:");

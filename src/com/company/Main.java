@@ -1,8 +1,4 @@
 package com.company;
-
-import org.w3c.dom.css.Counter;
-
-import java.sql.Array;
 import java.util.Scanner;
 
 public class Main {
@@ -24,10 +20,10 @@ public class Main {
                 massive = in.nextInt();
 
 
-                Smartphone S[] = new Smartphone[massive];
+                Smartphone[] S = new Smartphone[massive];
                 for (int i = 0; i < massive; i++) {
-                    S[i] = new Smartphone(SMARTPHONE.name, SMARTPHONE.mAh);
-                    S[i].P = new Processor(SMARTPHONE.P.GHz, SMARTPHONE.P.name);
+                    S[i] = new Smartphone(SMARTPHONE);
+                    S[i].P = new Processor(SMARTPHONE.P);
                 }
                 S[massive - 1].PrintSmartphone();
                 S[massive - 1].P.PrintProcessor();
@@ -40,8 +36,8 @@ public class Main {
                 SMARTPHONE.EnterSmartphone();
                 SMARTPHONE.P.EnterProcessor();
                 for (int i = 0; i < massive; i++) {
-                    S[i] = new Smartphone(SMARTPHONE.name, SMARTPHONE.mAh);
-                    S[i].P = new Processor(SMARTPHONE.P.GHz, SMARTPHONE.P.name);
+                    S[i] = new Smartphone(SMARTPHONE);
+                    S[i].P = new Processor(SMARTPHONE.P);
                 }
             }
                 S[massive-1].PrintSmartphone();
@@ -56,17 +52,21 @@ public class Main {
                 massive = in.nextInt();
                 Headphone[] H = new Headphone[massive];
         for(int i=0;i<massive;i++)
-            H[i] = new Headphone(HEADPHONE.mAh, HEADPHONE.name);
+        {H[i] = new Headphone(HEADPHONE);
+                Headphone.Counter();
+        }
                 H[massive-1].PrintHeadphone();
                 System.out.println("Редактировать данные наушников?\n1.Да\n2.Нет");
                 do {
                     f = in.nextInt();
                 }while (f!=1&&f!=2);
                 if(f==1) {
-                    Headphone.counter = 0;
+
                     HEADPHONE.EnterHeadphone();
-                    for (int i = 0; i < massive; i++)
-                        H[i] = new Headphone(HEADPHONE.mAh, HEADPHONE.name);
+                    for (int i = 0; i < massive; i++) {
+                        H[i] = new Headphone(HEADPHONE);
+                        Headphone.Counter();
+                    }
                     H[massive - 1].PrintHeadphone();
                 }
             }
@@ -78,10 +78,10 @@ else if(choose==3)
                 Notebook.EnterCost();
                 System.out.print("Введите кол-во гаджетов");
                 massive = in.nextInt();
-                Notebook N[] = new Notebook[massive];
+                Notebook[] N = new Notebook[massive];
                 for(int i=0;i<massive;i++ ) {
-                    N[i] = new Notebook( NOTEBOOK.mAh,NOTEBOOK.name);
-                    N[i].Video =new VideoAdapter(NOTEBOOK.Video.TF, NOTEBOOK.Video.name);
+                    N[i] = new Notebook( NOTEBOOK);
+                    N[i].Video =new VideoAdapter(NOTEBOOK.Video);
                 }
                 N[massive-1].PrintNotebook();
                 N[massive-1].Video.PrintVideoAdapter();
@@ -90,12 +90,12 @@ else if(choose==3)
                     f = in.nextInt();
                 }while (f!=1&&f!=2);
                 if(f==1) {
-                    Notebook.counter = 0;
+
                     NOTEBOOK.EnterNotebook();
                     NOTEBOOK.Video.EnterVideoAdapter();
                     for (int i = 0; i < massive; i++) {
-                        N[i] = new Notebook(NOTEBOOK.mAh, NOTEBOOK.name);
-                        N[i].Video = new VideoAdapter(NOTEBOOK.Video.TF, NOTEBOOK.Video.name);
+                        N[i] = new Notebook(NOTEBOOK);
+                        N[i].Video = new VideoAdapter(NOTEBOOK.Video);
                     }
                 }
                 N[massive-1].PrintNotebook();

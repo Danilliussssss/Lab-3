@@ -3,8 +3,8 @@ package com.company;
 import java.util.Scanner;
 
  class VideoAdapter{
-     protected String name;
-     protected int TF;
+     private String name;
+     private int TF;
 
     VideoAdapter()
     {
@@ -12,11 +12,11 @@ import java.util.Scanner;
         this.name="";
 
     }
-    VideoAdapter(int TF,String name)
+    VideoAdapter(VideoAdapter V)
     {
 
-        this.TF=TF;
-        this.name=name;
+        this.TF=V.TF;
+        this.name=V.name;
 
     }
 
