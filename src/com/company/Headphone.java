@@ -14,7 +14,6 @@ class Headphone {
     }
     Headphone(Headphone H)
     {
-
         this.mAh=H.mAh;
         this.name=H.name;
 

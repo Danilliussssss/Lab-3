@@ -25,6 +25,13 @@ import java.util.Scanner;
         System.out.print("Введите частоту ядра:");
         GHz = in.nextInt();
     }
+    int CorrectmAh(int mAh)
+    {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Введите объём батареи:");
+        mAh = in.nextInt();
+        return mAh;
+    }
 void PrintProcessor()
 {
     System.out.print("Название:");

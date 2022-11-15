@@ -12,21 +12,21 @@ public class Main {
             Scanner in = new Scanner(System.in);
             choose = in.nextInt();
             if (choose == 1) {
+                int n;
                 Smartphone SMARTPHONE = new Smartphone();
                 SMARTPHONE.EnterSmartphone();
+                n = SMARTPHONE.EnterMAh();
                 SMARTPHONE.P.EnterProcessor();
                 Smartphone.EnterCost();
                 System.out.print("Введите кол-во гаджетов");
                 massive = in.nextInt();
-
-
                 Smartphone[] S = new Smartphone[massive];
                 for (int i = 0; i < massive; i++) {
                     S[i] = new Smartphone(SMARTPHONE);
                     S[i].P = new Processor(SMARTPHONE.P);
                 }
                 S[massive - 1].PrintSmartphone();
-                S[massive - 1].P.PrintProcessor();
+                S[massive- 1].P.PrintProcessor();
                 System.out.println("Хотите редактировать данные смартфона?\n1.Да\n2.Нет");
                 do {
                     f = in.nextInt();
@@ -34,6 +34,7 @@ public class Main {
                 if (f == 1){
                     Smartphone.counter = 0;
                 SMARTPHONE.EnterSmartphone();
+                SMARTPHONE.P.CorrectmAh(n);
                 SMARTPHONE.P.EnterProcessor();
                 for (int i = 0; i < massive; i++) {
                     S[i] = new Smartphone(SMARTPHONE);
@@ -42,7 +43,6 @@ public class Main {
             }
                 S[massive-1].PrintSmartphone();
                 S[massive-1].P.PrintProcessor();
-
             } else if (choose == 2) {
 
                 Headphone HEADPHONE = new Headphone();
@@ -80,7 +80,7 @@ else if(choose==3)
                 massive = in.nextInt();
                 Notebook[] N = new Notebook[massive];
                 for(int i=0;i<massive;i++ ) {
-                    N[i] = new Notebook( NOTEBOOK);
+                    N[i] = new Notebook(NOTEBOOK);
                     N[i].Video =new VideoAdapter(NOTEBOOK.Video);
                 }
                 N[massive-1].PrintNotebook();
@@ -91,8 +91,8 @@ else if(choose==3)
                 }while (f!=1&&f!=2);
                 if(f==1) {
 
-                    NOTEBOOK.EnterNotebook();
                     NOTEBOOK.Video.EnterVideoAdapter();
+                    NOTEBOOK.EnterNotebook();
                     for (int i = 0; i < massive; i++) {
                         N[i] = new Notebook(NOTEBOOK);
                         N[i].Video = new VideoAdapter(NOTEBOOK.Video);

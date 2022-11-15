@@ -36,10 +36,15 @@ import java.util.Scanner;
         System.out.println("Введите данные смартфона:");
         System.out.print("Введите имя:");
         name = in.nextLine();
-        System.out.print("Введите объём батареи:");
-        mAh = in.nextInt();
-    }
 
+    }
+int EnterMAh()
+{
+    Scanner in=new Scanner(System.in);
+    System.out.print("Введите объём батареи:");
+    mAh = in.nextInt();
+    return mAh;
+}
     public   void  PrintSmartphone()
     {
         System.out.print("Имя:");
