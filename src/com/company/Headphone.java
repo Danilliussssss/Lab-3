@@ -8,19 +8,19 @@ class Headphone {
     private static int Cost;
     Headphone()
     {
-        this.mAh=0;
-        this.name="";
-
+        mAh=0;
+        name="";
+        counter++;
     }
-    Headphone(Headphone H)
+   void  InitHeadphone(Headphone H)
     {
-        this.mAh=H.mAh;
-        this.name=H.name;
+        mAh=H.mAh;
+        name=H.name;
 
     }
  static void Counter()
  {
-     counter++;
+     counter=0;
  }
     static void EnterCost()
     {
@@ -30,7 +30,7 @@ class Headphone {
 
     }
     void EnterHeadphone()
-    {   counter=0;
+    {
         Scanner in=new Scanner(System.in);
         System.out.println("Введите данные наушников:");
         System.out.print("Введите название:");
