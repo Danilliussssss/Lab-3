@@ -11,7 +11,7 @@ import java.util.Scanner;
        this. name="";
     }
 
-    Processor(Processor Pr)
+  void  InitProcessor(Processor Pr)
     {
         this.GHz=Pr.GHz;
         this.name=Pr.name;
@@ -24,13 +24,6 @@ import java.util.Scanner;
         name = in.nextLine();
         System.out.print("Введите частоту ядра:");
         GHz = in.nextInt();
-    }
-    int CorrectmAh(int mAh)
-    {
-        Scanner in=new Scanner(System.in);
-        System.out.print("Введите объём батареи:");
-        mAh = in.nextInt();
-        return mAh;
     }
 void PrintProcessor()
 {

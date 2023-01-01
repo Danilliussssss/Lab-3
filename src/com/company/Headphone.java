@@ -1,56 +1,49 @@
 package com.company;
 import java.util.Map;
 import java.util.Scanner;
-class Headphone {
-    private int mAh;
-    private String name;
-    private static int counter=0;
-    private static int Cost;
+class Headphone extends Gadget{
+   private int Radius;
+   private String Color;
+
+
     Headphone()
     {
-        mAh=0;
-        name="";
         counter++;
     }
    void  InitHeadphone(Headphone H)
     {
-        mAh=H.mAh;
-        name=H.name;
-
+        InitGadget(H.name,H.mAh);
+        Radius=H.Radius;
+        Color=H.Color;
     }
  static void Counter()
  {
      counter=0;
  }
-    static void EnterCost()
-    {
-        System.out.println("Введите цену наушников:");
-        Scanner in=new Scanner(System.in);
-        Cost=in.nextInt();
 
-    }
     void EnterHeadphone()
     {
         Scanner in=new Scanner(System.in);
         System.out.println("Введите данные наушников:");
-        System.out.print("Введите название:");
-        name = in.nextLine();
-        System.out.print("Введите объём батареи:");
-        mAh = in.nextInt();
+        EnterGadget();
+        System.out.print("Введите Цвет:");
+        Color = in.nextLine();
+        System.out.print("Введите Радиус действия:");
+        Radius = in.nextInt();
 
 
     }
 
      void  PrintHeadphone()
     {
-        System.out.print("Имя:");
-        System.out.println(name);
-        System.out.print("Объём батареи:");
-        System.out.println(mAh);
+        PrintGadget();
+        System.out.print("Цвет:");
+        System.out.println(Color);
+        System.out.print("Радиус действия:");
+        System.out.println(Radius);
         System.out.print("Цена:");
         System.out.println(Cost);
-        System.out.print("Количество:");
-        System.out.println(counter);
+
     }
 
 

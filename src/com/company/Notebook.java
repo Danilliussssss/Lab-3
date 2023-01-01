@@ -1,54 +1,46 @@
 package com.company;
 
+import java.awt.*;
 import java.util.Scanner;
 
- class Notebook {
-    private    int mAh;
-    private String name;
-     VideoAdapter Video;
-    private static int counter=0;
-     private static int Cost;
+ class Notebook extends Gadget {
+    private    int Inch;
+    private String ColorKeyBoard;
+     VideoAdapter Video = new VideoAdapter();
+
     Notebook()
     {
-        this.mAh=0;
-        this.name="";
-Video = new VideoAdapter();
+ counter++;
     }
-    Notebook(Notebook N)
+     void InitNotebook(Notebook N)
     {
-        Video = new VideoAdapter();
-        this.mAh=N.mAh;
-        this.name=N.name;
-        counter++;
-    }
-     static void EnterCost()
-     {
-         System.out.println("Введите цену ноутбука:");
-         Scanner in=new Scanner(System.in);
-         Cost=in.nextInt();
 
-     }
+        Inch=N.Inch;
+        ColorKeyBoard=N.ColorKeyBoard;
+
+    }
+
     void EnterNotebook()
     {
-        counter=0;
+
         Scanner in=new Scanner(System.in);
         System.out.println("Введите данные ноутбука:");
-        System.out.print("Введите название:");
-        name = in.nextLine();
-        System.out.print("Введите объём батареи:");
-        mAh = in.nextInt();
+        EnterGadget();
+        System.out.print("Введите цвет клавиатуры:");
+        ColorKeyBoard = in.nextLine();
+        System.out.print("Введите кол-во дюймов:");
+        Inch = in.nextInt();
     }
 
     public   void  PrintNotebook()
     {
-        System.out.print("Название:");
-        System.out.println(name);
-        System.out.print("Объём батареи:");
-        System.out.println(mAh);
+        System.out.print("Цвет клавиатуры:");
+        System.out.println(ColorKeyBoard);
+        System.out.print("Кол-во дюймов:");
+        System.out.println(Inch);
         System.out.print("Цена:");
         System.out.println(Cost);
-        System.out.print("Количество:");
-        System.out.println(counter);
+
     }
 
 }

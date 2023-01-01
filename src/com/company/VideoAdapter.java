@@ -12,7 +12,7 @@ import java.util.Scanner;
         this.name="";
 
     }
-    VideoAdapter(VideoAdapter V)
+     void  InitVideoAdapter(VideoAdapter V)
     {
 
         this.TF=V.TF;

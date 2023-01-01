@@ -4,74 +4,74 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int choose,f=1;Headphone [][] H = new Headphone[5][];
+        int choose,Smart=1, Head= 1,Note=1;
+        Headphone[][] H = new Headphone[5][];Smartphone[][] S = new Smartphone[5][];Notebook[][] N = new Notebook[5][];
 
         do {
 
             PrintMenu();
-            int massive; Scanner in = new Scanner(System.in);
+            int massive;
+            Scanner in = new Scanner(System.in);
             choose = in.nextInt();
-try {
+            try {
 
-    if (choose < 1 || choose > 4)
-        throw new Exception("Вы ввели некорректное число:");
+                if (choose < 1 || choose > 4)
+                    throw new Exception("Вы ввели некорректное число:");
 
                 if (choose == 1) {
-                    int n;
+
                     Smartphone SMARTPHONE = new Smartphone();
                     SMARTPHONE.EnterSmartphone();
-                    n = SMARTPHONE.EnterMAh();
+
                     SMARTPHONE.P.EnterProcessor();
-                    Smartphone.EnterCost();
-                    System.out.print("Введите кол-во гаджетов");
+
+                    System.out.print("Введите кол-во гаджетов:");
                     massive = in.nextInt();
-                    Smartphone[] S = new Smartphone[massive];
+                    S[Smart-1] = new Smartphone[massive];
                     for (int i = 0; i < massive; i++) {
-                        S[i] = new Smartphone(SMARTPHONE);
-                        S[i].P = new Processor(SMARTPHONE.P);
+                        S[Smart-1][i] = new Smartphone();
+                        S[Smart-1][i].InitSmartphone(SMARTPHONE);
+                        S[Smart-1][i].P.InitProcessor(SMARTPHONE.P);
                     }
-                    S[massive - 1].PrintSmartphone();
-                    S[massive - 1].P.PrintProcessor();
+                    S[Smart - 1][0].PrintSmartphone();
+                    S[Smart- 1][0].P.PrintProcessor();
+                    Smart++;
                 } else if (choose == 2) {
 
                     Headphone HEADPHONE = new Headphone();
                     HEADPHONE.EnterHeadphone();
-                    Headphone.EnterCost();
+
                     System.out.print("Введите кол-во гаджетов");
                     massive = in.nextInt();
                     Headphone.Counter();
-                    //System.out.print("Введите кол-во партий:");
-                    //int n = in.nextInt();
-                    H[f - 1] = new Headphone[massive];
-                    for (int j = 0; j < massive; j++)
-                        H[f - 1][j] = new Headphone();
-                    for (int j = 0; j < massive; j++)
-                        H[f - 1][j].InitHeadphone(HEADPHONE);
-                    for (int i = 0; i < f; i++)
-                            H[i][0].PrintHeadphone();
-                    f++;
+                    H[ Head- 1] = new Headphone[massive];
+                    for (int i = 0; i < massive; i++)
+                    {  H[Head - 1][i] = new Headphone();
+                        H[Head - 1][i].InitHeadphone(HEADPHONE);
+                    }
+                        H[Head-1][0].PrintHeadphone();
+                    Head++;
                 } else if (choose == 3) {
                     Notebook NOTEBOOK = new Notebook();
                     NOTEBOOK.EnterNotebook();
                     NOTEBOOK.Video.EnterVideoAdapter();
-                    Notebook.EnterCost();
                     System.out.print("Введите кол-во гаджетов");
                     massive = in.nextInt();
-                    Notebook[] N = new Notebook[massive];
+                    N[Note-1] = new Notebook[massive];
                     for (int i = 0; i < massive; i++) {
-                        N[i] = new Notebook(NOTEBOOK);
-                        N[i].Video = new VideoAdapter(NOTEBOOK.Video);
+                        N[Note-1][i] = new Notebook();
+                        N[Note-1][i].InitNotebook(NOTEBOOK);
+                        N[Note-1][i].Video.InitVideoAdapter(NOTEBOOK.Video);
                     }
-                    N[massive - 1].PrintNotebook();
-                    N[massive - 1].Video.PrintVideoAdapter();
+                    N[Note - 1][0].PrintNotebook();
+                    N[Note - 1][0].Video.PrintVideoAdapter();
                 }
-        }
-    catch (Exception a){
-        System.out.print(a.getMessage());
-        System.out.println(choose);
-        }
+            } catch (Exception a) {
+                System.out.print(a.getMessage());
+                System.out.println(choose);
+            }
 
-        }while(choose!=4);
+        } while (choose != 4);
     }
     private static void PrintMenu() {
         System.out.println("1.Смартфоны\n2.Наушники\n3.Ноутбуки\n4.Выход");
