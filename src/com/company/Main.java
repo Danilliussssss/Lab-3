@@ -1,12 +1,12 @@
 package com.company;
-import java.util.Scanner;
-
+import java.util.*;
+import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
         int choose,Smart=1, Head= 1,Note=1;
         Headphone[][] H = new Headphone[5][];Smartphone[][] S = new Smartphone[5][];Notebook[][] N = new Notebook[5][];
-
+        List<Gadget> V= new ArrayList<>();
         do {
 
             PrintMenu();
@@ -35,13 +35,21 @@ public class Main {
                     }
                     S[Smart - 1][0].PrintSmartphone();
                     S[Smart- 1][0].P.PrintProcessor();
+                    V.add(S[Smart- 1][0]);
+                    V.sort(Gadget::compareTo);
+                    Iterator<Gadget> Count = V.iterator();
+                    while(Count.hasNext())
+                    {
+                        Gadget C = Count.next();
+                        C.PrintGadget();
+                    }
                     Smart++;
                 } else if (choose == 2) {
 
                     Headphone HEADPHONE = new Headphone();
                     HEADPHONE.EnterHeadphone();
 
-                    System.out.print("Введите кол-во гаджетов");
+                    System.out.print("Введите кол-во гаджетов:");
                     massive = in.nextInt();
                     Headphone.Counter();
                     H[ Head- 1] = new Headphone[massive];
@@ -50,12 +58,21 @@ public class Main {
                         H[Head - 1][i].InitHeadphone(HEADPHONE);
                     }
                         H[Head-1][0].PrintHeadphone();
+                    V.add(H[Head- 1][0]);
+                    V.sort(Gadget::compareTo);
+                    Iterator<Gadget> Count = V.iterator();
+                    while(Count.hasNext())
+                    {
+                        Gadget C = Count.next();
+                        C.PrintGadget();
+                    }
+
                     Head++;
                 } else if (choose == 3) {
                     Notebook NOTEBOOK = new Notebook();
                     NOTEBOOK.EnterNotebook();
                     NOTEBOOK.Video.EnterVideoAdapter();
-                    System.out.print("Введите кол-во гаджетов");
+                    System.out.print("Введите кол-во гаджетов:");
                     massive = in.nextInt();
                     N[Note-1] = new Notebook[massive];
                     for (int i = 0; i < massive; i++) {
@@ -65,11 +82,23 @@ public class Main {
                     }
                     N[Note - 1][0].PrintNotebook();
                     N[Note - 1][0].Video.PrintVideoAdapter();
+                    V.add(N[Note- 1][0]);
+                    V.sort(Gadget::compareTo);
+
+                    Iterator<Gadget> Count = V.iterator();
+                    while(Count.hasNext())
+                    {
+                        Gadget C = Count.next();
+                        C.PrintGadget();
+                    }
+                    Note++;
                 }
+
             } catch (Exception a) {
                 System.out.print(a.getMessage());
                 System.out.println(choose);
             }
+
 
         } while (choose != 4);
     }

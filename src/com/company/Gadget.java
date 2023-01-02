@@ -1,15 +1,23 @@
 package com.company;
-import java.util.Arrays;
-import java.util.Scanner;
- class Gadget{
+import java.util.*;
+
+class Gadget implements  Comparable<Gadget>{
 protected String name;
 protected int mAh;
      protected static int counter=0;
      protected static int Cost;
- Gadget(){
+
+
+
+    Gadget(){
 
      counter++;
  }
+     @Override
+   public  int compareTo(Gadget G)
+     {
+         return this.name.compareTo(G.name);
+     }
 Gadget EnterGadget()
         {
             Scanner in=new Scanner(System.in);
@@ -33,5 +41,9 @@ mAh = PmAh;
         System.out.println(name);
         System.out.print("Объём батареи:");
         System.out.println(mAh);
+        System.out.print("Цена:");
+        System.out.println(Cost);
+
     }
+
 }

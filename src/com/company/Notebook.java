@@ -14,7 +14,7 @@ import java.util.Scanner;
     }
      void InitNotebook(Notebook N)
     {
-
+InitGadget(N.name,N.mAh);
         Inch=N.Inch;
         ColorKeyBoard=N.ColorKeyBoard;
 
@@ -34,6 +34,7 @@ import java.util.Scanner;
 
     public   void  PrintNotebook()
     {
+        PrintGadget();
         System.out.print("Цвет клавиатуры:");
         System.out.println(ColorKeyBoard);
         System.out.print("Кол-во дюймов:");
